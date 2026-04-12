@@ -1,0 +1,19 @@
+# OS Metadata
+.DS_Store
+Thumbs.db
+
+# IDE / Editor Folders
+.vscode/
+.idea/
+*.swp
+
+# Local Environment / Secrets
+.env
+*.log
+
+# Dependencies (if you ever use them)
+node_modules/
+
+# Build Output
+dist/
+build/
