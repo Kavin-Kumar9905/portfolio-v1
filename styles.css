@@ -292,17 +292,26 @@ nav {
     justify-content: center;
 }
 
+/* Portrait Container - Clean & Static */
 .image-wrapper {
     width: 380px;
     height: 480px;
-    background: #f9f9f9;
     border: 2px dashed #ddd;
     border-radius: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
     overflow: hidden;
+    background-color: #f9f9f9;
+    position: relative;
+    /* Explicitly no hover/shadow/glow */
+    box-shadow: none;
+    transition: none;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This forces the image to fill the container perfectly */
+    object-position: center;
+    display: block;
 }
 
 /* Ensure the image fills the wrapper professionally */
