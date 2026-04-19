@@ -293,15 +293,15 @@ nav {
 }
 
 /* Portrait Container - Clean & Static */
+/* Portrait Container - Unified and Clean */
 .image-wrapper {
     width: 380px;
     height: 480px;
     border: 2px dashed #ddd;
     border-radius: 40px;
-    overflow: hidden;
+    overflow: hidden; /* Ensures image stays inside the rounded corners */
     background-color: #f9f9f9;
     position: relative;
-    /* Explicitly no hover/shadow/glow */
     box-shadow: none;
     transition: none;
 }
@@ -309,8 +309,8 @@ nav {
 .image-wrapper img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* This forces the image to fill the container perfectly */
-    object-position: center;
+    object-fit: cover; /* Fills the area */
+    object-position: center; /* Centers the face */
     display: block;
 }
 
@@ -321,21 +321,6 @@ nav {
     object-fit: cover; /* This centers and crops the photo to fill the box */
     object-position: center;
     border-radius: 40px; /* Matches your wrapper radius */
-}
-
-/* Optional: Add a subtle overlay effect for better contrast if needed */
-.image-wrapper::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    border-radius: 40px;
-    box-shadow: inset 0 0 50px rgba(0,0,0,0.1);
-    pointer-events: none;
-}
-
-.placeholder-content {
-    text-align: center;
-    color: #aaa;
 }
 
 .placeholder-content p {
