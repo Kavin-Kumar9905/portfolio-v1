@@ -305,6 +305,24 @@ nav {
     overflow: hidden;
 }
 
+/* Ensure the image fills the wrapper professionally */
+.placeholder-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This centers and crops the photo to fill the box */
+    object-position: center;
+    border-radius: 40px; /* Matches your wrapper radius */
+}
+
+/* Optional: Add a subtle overlay effect for better contrast if needed */
+.image-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    border-radius: 40px;
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.1);
+    pointer-events: none;
+}
 
 .placeholder-content {
     text-align: center;
