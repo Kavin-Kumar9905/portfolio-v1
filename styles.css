@@ -1053,3 +1053,50 @@ nav {
     margin-top: 15px;
     display: inline-block;
 }
+
+/* 1. The Container: Force a single row and allow horizontal scrolling */
+.carousel-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;          /* Crucial: Prevents cards from moving to the next line */
+    overflow-x: auto;           /* Crucial: Enables horizontal scrolling */
+    overflow-y: hidden;         /* Cleanliness: Hides any vertical scroll leaks */
+    padding: 24px 12px;         /* Adds breathing room for card shadows */
+    gap: 24px;                  /* Spaces your project cards evenly */
+    scroll-behavior: smooth;    /* Smooth movement */
+    
+    /* Modern Touch: Custom scrollbar styling */
+    scrollbar-width: thin;                      /* For Firefox */
+    scrollbar-color: #ffcc00 transparent;       /* For Firefox (matches your yellow theme) */
+}
+
+/* Optional: Elegant scrollbar for Chrome, Safari, and Edge */
+.carousel-container::-webkit-scrollbar {
+    height: 6px;                /* Thin, minimalist scrollbar line */
+}
+
+.carousel-container::-webkit-scrollbar-track {
+    background: transparent;    /* Keeps it clean and blending with the background */
+}
+
+.carousel-container::-webkit-scrollbar-thumb {
+    background-color: #ffcc00;  /* Brand yellow accent color */
+    border-radius: 10px;
+}
+
+/* 2. The Cards: Prevent them from squeezing or collapsing */
+.project-card {
+    flex: 0 0 350px;            /* Crucial: Don't grow, don't shrink, stay exactly 350px wide */
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    /* Keep your existing border-radius, background, and shadows here */
+}
+
+/* 3. The End Circle Card: Keep its shape intact */
+.carousel-footer-card {
+    flex: 0 0 200px;            /* Crucial: Don't let the "40+ More Projects" circle warp */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
